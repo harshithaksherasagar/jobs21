@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the repository using the GitHub credentials
-                    git credentialsId: 'your-credential-id', url: 'https://github.com/harshithaksherasagar/jobs21.git'
+                    git credentialsId: '2a21f3f4-24c4-4f05-8dfa-e81d25dc9798', url: 'https://github.com/harshithaksherasagar/jobs21.git'
                 }
             }
         }
