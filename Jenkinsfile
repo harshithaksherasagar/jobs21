@@ -2,19 +2,14 @@ pipeline {
     agent any
 
     stages {
-        // Stage 1: GitHub access (checkout the repository)
         stage('GitHub Access') {
             steps {
                 script {
-                    // Checkout the repository (you'll add your GitHub URL here)
-                    git 'https://github.com/yourusername/your-repository.git' 
-                    // Alternatively, if Jenkins has SCM configuration:
-                    // checkout scm 
+                    // Checkout the repository using the GitHub credentials
+                    git credentialsId: 'your-credential-id', url: 'https://github.com/harshithaksherasagar/jobs21.git'
                 }
             }
         }
-
-        // Stage 2: Java program execution
         stage('Java Program Execution') {
             steps {
                 script {
@@ -24,8 +19,6 @@ pipeline {
                 }
             }
         }
-
-        // Stage 3: Python program execution
         stage('Python Program Execution') {
             steps {
                 script {
